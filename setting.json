@@ -1,0 +1,54 @@
+{
+    "products": [
+        {
+            "title": "Ubuntu-2204-JammyJellyfish",
+            "prompt": "Jammy Jellyfish",
+            "num_output": 10
+        },
+        {
+            "title": "Ubuntu-2110-ImpishIndri",
+            "prompt": "Impish Indri",
+            "num_output": 10
+        },
+        {
+            "title": "Ubuntu-2104-HirsuteHippo",
+            "prompt": "Hirsute Hippo",
+            "num_output": 10
+        },
+        {
+            "title": "Ubuntu-2010-GroovyGorilla",
+            "prompt": "Groovy Gorilla",
+            "num_output": 10
+        },
+        {
+            "title": "Ubuntu-2004-FocalFossa",
+            "prompt": "Focal Fossa",
+            "num_output": 10
+        },
+        {
+            "title": "Ubuntu-1910-EoanErmine",
+            "prompt": "Eoan Ermine",
+            "num_output": 10
+        },
+        {
+            "title": "Ubuntu-1904-DiscoDingo",
+            "prompt": "Eoan Ermine",
+            "num_output": 10
+        },
+        {
+            "title": "Ubuntu-1810-CosmicCuttlefish",
+            "prompt": "Cosmic Cuttlefish",
+            "num_output": 10
+        },
+        {
+            "title": "Ubuntu-1804-BionicBeaver",
+            "prompt": "Bionic Beaver",
+            "num_output": 10
+        },
+        {
+            "title": "Ubuntu-1710-ArtfulAardvark",
+            "prompt": "Artful Aardvark",
+            "num_output": 10
+        }
+    ]
+}
