@@ -127,3 +127,15 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# Setting
+setting.json
+
+# Output folder
+output/
+*.png
+
+# Gallery
+Gallery.md
+
