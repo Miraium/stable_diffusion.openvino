@@ -20,8 +20,8 @@ pip install -r requirements.txt
 ## Generate image from text description
 
 ```bash
-usage: stable_diffusion.py [-h] [--model MODEL] [--seed SEED] [--beta-start BETA_START] [--beta-end BETA_END] [--beta-schedule BETA_SCHEDULE] [--num-inference-steps NUM_INFERENCE_STEPS]
-                           [--guidance-scale GUIDANCE_SCALE] [--eta ETA] [--tokenizer TOKENIZER] [--prompt PROMPT] [--output OUTPUT]
+usage: demo.py [-h] [--model MODEL] [--seed SEED] [--beta-start BETA_START] [--beta-end BETA_END] [--beta-schedule BETA_SCHEDULE] [--num-inference-steps NUM_INFERENCE_STEPS]
+               [--guidance-scale GUIDANCE_SCALE] [--eta ETA] [--tokenizer TOKENIZER] [--prompt PROMPT] [--init-image INIT_IMAGE] [--strength STRENGTH] [--mask MASK] [--output OUTPUT]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -40,22 +40,50 @@ optional arguments:
   --tokenizer TOKENIZER
                         tokenizer
   --prompt PROMPT       prompt
+  --init-image INIT_IMAGE
+                        path to initial image
+  --strength STRENGTH   how strong the initial image should be noised [0.0, 1.0]
+  --mask MASK           mask of the region to inpaint on the initial image
   --output OUTPUT       output image name
+  ```
+
+## Examples
+
+### Example Text-To-Image
+```bash
+python demo.py --prompt "Street-art painting of Emilia Clarke in style of Banksy, photorealism"
 ```
 
-### Example
+### Example Image-To-Image
 ```bash
-python stable_diffusion.py --prompt "Street-art painting of Emilia Clarke in style of Banksy, photorealism"
+python demo.py --prompt "Photo of Emilia Clarke with a bright red hair" --init-image ./data/input.png --strength 0.5
+```
+
+### Example Inapinting
+```bash
+python demo.py --prompt "Photo of Emilia Clarke with a bright red hair" --init-image ./data/input.png --mask ./data/mask.png --strength 0.5
+```
+
+### Example web demo
+<p align="center">
+  <img src="data/demo_web.png"/>
+</p>
+
+[Example video on YouTube](https://youtu.be/wkbrRr6PPcY)
+
+```bash
+streamlit run demo_web.py
 ```
 
 ## Performance
 
-| CPU                                      | Time per iter | Total time |
-|------------------------------------------|---------------|------------|
-| Intel(R) Core(TM) i5-8279U               | 7.4 s/it      | 3.59 min   |
-| AMD Ryzen Threadripper 1900X             | 5.34 s/it     | 2.58 min   |
-| Intel(R) Xeon(R) Gold 6154 CPU @ 3.00GHz | 1 s/it        | 33 s       |
-| Intel(R) Core(TM) i7-1165G7 @ 2.80GHz    | 7.4 s/it      | 3.59 min   |
+| CPU                                                   | Time per iter | Total time |
+|-------------------------------------------------------|---------------|------------|
+| Intel(R) Core(TM) i5-8279U                            | 7.4 s/it      | 3.59 min   |
+| AMD Ryzen Threadripper 1900X                          | 5.34 s/it     | 2.58 min   |
+| Intel(R) Xeon(R) Gold 6154 CPU @ 3.00GHz              | 1 s/it        | 33 s       |
+| Intel(R) Core(TM) i7-1165G7 @ 2.80GHz                 | 7.4 s/it      | 3.59 min   |
+| Intel(R) Core(TM) i7-11800H @ 2.30GHz (16 threads)    | 2.9 s/it      | 1.54 min   |
 
 ## Acknowledgements
 
