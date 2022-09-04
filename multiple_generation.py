@@ -5,7 +5,7 @@ import time
 import subprocess
 
 OUTPUT_ROOT = "output"
-BASE_COMMAND = 'python stable_diffusion.py --output "{output_path}" --prompt "{prompt}"'
+BASE_COMMAND = 'python demo.py --output "{output_path}" --prompt "{prompt}"'
 
 
 def main(setting):
