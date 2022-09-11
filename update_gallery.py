@@ -43,7 +43,8 @@ def main():
         table += "|-" * NUM_COLUMN + "|\n"
 
         for i, image_path in enumerate(image_list):
-            table += "|" + f"![]({image_path})"
+            filename = os.path.basename(image_path)
+            table += "|" + f"![]({image_path})<br>{filename}"
             if i % NUM_COLUMN == NUM_COLUMN - 1:
                 table += "|\n"
         
